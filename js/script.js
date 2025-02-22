@@ -1,21 +1,21 @@
 // Task 1
-const showMessage = () => alert("Hello World!");
-document.querySelector("button").addEventListener("click", showMessage);
+const showMessage = () => console.log("Hello World!");
+showMessage();
 
 // Task 2
 let randomNumber = Math.floor(Math.random() * 100) + 1;
-const checkGuess = () => {
-    let userGuess = document.getElementById("guessField").value;
-    let resultText = userGuess == randomNumber ? "Правильно!" : "Неправильно.";
-    document.getElementById("guessResult").innerText = resultText;
+const checkGuess = (userGuess) => {
+    return userGuess == randomNumber ? "Правильно!" : "Неправильно.";
 };
+console.log(checkGuess(50));
 
 // Task 3
 let clickCount = 0;
-document.addEventListener("click", () => {
+const countClicks = () => {
     clickCount++;
     console.log(`Кількість кліків: ${clickCount}`);
-});
+};
+countClicks();
 
 // Task 4
 const applyCallbackToEachElement = (arr, callback) => arr.map(callback);
